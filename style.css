@@ -5,6 +5,11 @@ html, body {
     font-family: sans-serif;
 }
 
+.sidebar svg {
+    fill: white;
+    width: 20px;
+}
+
 .dashboard {
     height: 100vh;
     width: 100vw;
@@ -16,12 +21,24 @@ html, body {
 .header {
     background-color: white;
     color: black;
-    padding: 22px 55px;
+    padding: 10px 55px;
     grid-column: 2;
     grid-row: 1;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: 1fr 16fr;
+    padding-top: 7px;
+}
+
+.search svg {
+    margin: 0;
+    width: 20px;
+    padding-top: 4px;
 }
 
 .search > input{
@@ -36,6 +53,19 @@ html, body {
 
 .account-info {
     justify-self: end;
+    align-self: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.account-info > div > img {
+    margin: 0;
+    width: 20px;
+    background-color: rgb(249, 189, 9);
+    padding: 8px;
+    border-radius: 100%;
 }
 
 .account-info > p {
@@ -44,18 +74,37 @@ html, body {
     font-size: 15px;
 }
 
-.greeting {
-    align-self: end;
+.account-info > svg {
+    width: 20px;
 }
 
-.greeting > p {
+.greeting {
+    align-self: end;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    gap: 20px;
+}
+
+.greeting img {
+    width: 40px;
+    background-color: rgb(249, 189, 9);
+    padding: 8px;
+    border-radius: 100%;
+}
+
+.greeting > div {
+    align-self: center;
+}
+
+.greeting p {
     margin: 0;
     padding-bottom: 5px;
     font-size: 11px;
     font-weight: 700;
+    grid-column: 2;
 }
 
-.greeting > p:last-child {
+.greeting p:last-child {
     font-size: 20px;
     padding: 0;
 }
@@ -73,10 +122,11 @@ button {
 
 .buttons {
     justify-self: end;
-    align-self: end;
+    align-self: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    padding-top: 20px;
 }
 
 .sidebar {
@@ -94,49 +144,88 @@ button {
 
 .dash-icon {
     font-size: 20px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
+    align-items: center;
+}
+
+.sidebar div div {
+    justify-self: center;
+    align-items: center;
+}
+
+.dash-icon svg {
+    width: 40px;
 }
 
 .home {
     grid-row: 5;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .profile {
     grid-row: 8;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .messages {
     grid-row: 11;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .history {
     grid-row: 14;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .tasks {
     grid-row: 17;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .communities {
     grid-row: 20;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .settings {
     grid-row: 25;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .support {
     grid-row: 28;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .privacy {
     grid-row: 31;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5px;
 }
 
 .main-content {
     background-color: rgb(223, 227, 236);
     color: black;
-    max-height: 77.5vh;
-    padding: 18px 20px 18px 15px;
+    padding: 18px 20px 0 15px;
     font-size: 18px;
     grid-column: 2;
     grid-row: 2;
@@ -181,17 +270,30 @@ button {
     border-radius: 7px;
     border-left: rgb(249, 189, 9) solid 8px;
     padding: 20px;
+    display: grid;
 }
 
-.project > p {
+.project p {
     margin: 0;
     font-size: 15px;
 }
 
-.project > p:nth-child(2) {
+.project p:nth-child(2) {
     font-size: 13px;
     font-weight: 300;
     color: gray;
+}
+
+.project div:last-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-self: end;
+    align-self: end;
+}
+
+.project svg {
+    width: 20px;
 }
 
 .announcements {
@@ -234,12 +336,41 @@ button {
     align-items: center;
 }
 
-.item > p {
+.item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 15px;
+}
+
+.item > div > img {
+    margin: 0;
+    width: 20px;
+    padding: 8px;
+    border-radius: 100%;
+}
+
+.item:first-child > div > img {
+    background-color: rgb(179, 239, 255);
+}
+
+.item:nth-child(2) > div > img {
+    background-color: rgb(249, 189, 9);
+}
+
+.item:nth-child(3) > div > img {
+    background-color: rgb(167, 167, 167);
+}
+
+.item:last-child > div > img {
+    background-color: rgb(219, 126, 185);
+}
+
+.item > div > p {
     margin: 0;
     font-size: 14px;
 }
 
-.item > p:last-child {
+.item > div > p:last-child {
     font-size: 12px;
     font-weight: 300;
     color: gray;
